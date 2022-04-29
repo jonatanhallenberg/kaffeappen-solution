@@ -1,26 +1,30 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Title from './components/atoms/Title';
+import Button from './components/atoms/Button';
+import Textbox from './components/atoms/Textbox';
+import AlertList from './components/atoms/AlertList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <>
+    <h1>Mina komponenter</h1>
+    <h2>Atomer</h2>
+    <Title>Kaffeappen</Title>
+    <Button>Logga in</Button>
+    <Button variant="secondary">Registrera</Button>
+    <Button fullWidth={true}>Klicka här</Button>
+    <Textbox placeholder="användarnamn" />
+    <Textbox isValid={false} />
+    <Textbox fullWidth={true} />
+    <AlertList>
+      <li>Fyll i rätt</li>
+      <li>Fyll i rätt igen</li>
+    </AlertList>
+    <AlertList variant="success">
+      <li>Du gjorde rätt</li>
+    </AlertList>
+  </>
+)
 
 export default App;
