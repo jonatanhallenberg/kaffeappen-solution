@@ -12,6 +12,7 @@ const StyledList = styled.ul<StyledAlertListProps>`
     padding-top: 10px;
     padding-bottom: 10px;
     font-family: "Scope one";
+    margin: 0;
 `;
 
 interface AlertListProps {

@@ -5,6 +5,7 @@ interface StyledTextboxProps {
     variant?: "primary" | "secondary";
     width?: string;
     isValid?: boolean;
+    marginTop?: number;
 }
 
 const StyledTextbox = styled.input<StyledTextboxProps>`
@@ -23,15 +24,18 @@ const StyledTextbox = styled.input<StyledTextboxProps>`
     
     border-radius: 3px;
     width: ${props => props.width};
+    ${ props => props.marginTop && `margin-top: ${props.marginTop}px;`}
 `;
 
 interface TextboxProps {
     fullWidth?: boolean;
     placeholder?: string;
     isValid?: boolean;
+    onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
+    marginTop?: number;
 }
 
-const Textbox = ({ fullWidth = false, placeholder = "", isValid = true }: TextboxProps) => (
-    <StyledTextbox placeholder={placeholder} isValid={isValid} width={fullWidth ? "100%" : "auto"} />
+const Textbox = ({ marginTop, onChange, fullWidth = false, placeholder = "", isValid = true }: TextboxProps) => (
+    <StyledTextbox marginTop={marginTop} onChange={onChange} placeholder={placeholder} isValid={isValid} width={fullWidth ? "100%" : "auto"} />
 )
 export default Textbox;
